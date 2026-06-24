@@ -6,8 +6,17 @@
     <description>Recent content on MorknOrk</description>
     <generator>Hugo</generator>
     <language>en-au</language>
-    <lastBuildDate>Wed, 24 Jun 2026 06:02:43 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 06:11:30 +0000</lastBuildDate>
     <atom:link href="http://10.0.0.19:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contact</title>
+      <link>http://10.0.0.19:1313/contact/</link>
+      <pubDate>Wed, 24 Jun 2026 06:11:30 +0000</pubDate>
+      <guid>http://10.0.0.19:1313/contact/</guid>
+      <description>&lt;p&gt;The best way to reach me is email:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;mailto:contact@morknork.com&#34;&gt;contact@morknork.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ll also find me on &lt;a href=&#34;https://github.com/morknork&#34;&gt;GitHub&lt;/a&gt; and &lt;a href=&#34;https://www.linkedin.com/in/mark-richardson-48328a237/&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Authentik SSO</title>
       <link>http://10.0.0.19:1313/projects/authentik-sso/</link>
