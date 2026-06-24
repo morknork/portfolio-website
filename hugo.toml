@@ -1,0 +1,4 @@
+baseURL = 'https://morknork.com/'
+locale = 'en-au'
+title = 'Mork - Security'
+theme = 'PaperMod'
