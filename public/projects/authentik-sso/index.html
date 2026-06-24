@@ -7,7 +7,8 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Authentik SSO | MorknOrk</title>
 <meta name="keywords" content="">
-<meta name="description" content="Authentik SSO - MorknOrk">
+<meta name="description" content="Before implementing Authentik, I was running Adguard Home, the Arr stack (5-6 apps), Jellyfin. Each with its own local account, all sharing one simple password to keep access frictionless on a network I treated as trusted. Absolutely horrible security across the board, honestly. The only meaningful control I had in place was that it&rsquo;s all on my internal network.
+Changing the password meant updating it across every service manually. If my network was ever compromised, it wouldn&rsquo;t take long for an attacker to gain full access across the board.">
 <meta name="author" content="">
 <link rel="canonical" href="http://10.0.0.19:1313/projects/authentik-sso/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -138,6 +139,16 @@
 
 </div>
   </header> 
+  <div class="post-content md-content"><p>Before implementing Authentik, I was running Adguard Home, the Arr stack (5-6 apps), Jellyfin. Each with its own local account, all sharing one simple password to keep access frictionless on a network I treated as trusted. Absolutely horrible security across the board, honestly. The only meaningful control I had in place was that it&rsquo;s all on my internal network.</p>
+<p>Changing the password meant updating it across every service manually. If my network was ever compromised, it wouldn&rsquo;t take long for an attacker to gain full access across the board.</p>
+<p>Two key components that I used to solve this problem are Authentik and Caddy. Authentik, an identity provider, manages users, passwords, and their permissions. Authentik is the guard at the gate of my keep, nobody gets in without their okay. Caddy is my reverse proxy, the gate; every request hits it first and then is routed to the right service.</p>
+<p>When a request comes in, Caddy checks with Authentik whether the request is authenticated. If it isn&rsquo;t, the request is redirected to the Authentik login page. If the user doesn&rsquo;t exist, enters a wrong password, or doesn&rsquo;t have permission to access the service, they&rsquo;re stopped here. Authentik handles both the authentication (proving identity) and the authorisation (whether this identity has permission to access the service). This is forward auth - Caddy defers the authentication to Authentik and then enforces the result.
+Once the user is authenticated with Authentik, Caddy routes the request to the requested service. When a user logs in, they have an authenticated session which means they&rsquo;re able to access the services to which they have permission - a single sign-on.</p>
+<p>This design also means that any service that either has a weak login or none at all is still fully protected since authentication happens at the proxy.
+<img alt="Forward auth request flow: a request passes through Caddy to the authentik check, unauthenticated requests go to login, authenticated requests reach the services" loading="lazy" src="/img/forward-auth.svg"></p>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">

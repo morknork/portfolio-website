@@ -22,7 +22,8 @@
       <link>http://10.0.0.19:1313/projects/authentik-sso/</link>
       <pubDate>Wed, 24 Jun 2026 06:02:43 +0000</pubDate>
       <guid>http://10.0.0.19:1313/projects/authentik-sso/</guid>
-      <description></description>
+      <description>&lt;p&gt;Before implementing Authentik, I was running Adguard Home, the Arr stack (5-6 apps), Jellyfin. Each with its own local account, all sharing one simple password to keep access frictionless on a network I treated as trusted. Absolutely horrible security across the board, honestly. The only meaningful control I had in place was that it&amp;rsquo;s all on my internal network.&lt;/p&gt;
+&lt;p&gt;Changing the password meant updating it across every service manually. If my network was ever compromised, it wouldn&amp;rsquo;t take long for an attacker to gain full access across the board.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
