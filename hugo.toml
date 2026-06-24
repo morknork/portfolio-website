@@ -1,19 +1,16 @@
 baseURL = 'https://morknork.com/'
 locale = 'en-au'
-title = 'Mark - Security'
+title = 'MorknOrk'
 theme = 'PaperMod'
 
 [params]
   [params.profileMode]
     enabled = true
     title = "Mark"
-    subtitle = '''
-    Security analyst in critical infrastructure (IT/OT). GRC by title, hands-on by nature. 
-    Building, breaking, and fixing in my homelab. Heading toward security engineering.
-    '''
-    # imageUrl = "/img/profile.png"   # add an avatar here later; leave commented for none
-    # imageWidth = 120
-    # imageHeight = 120
+    subtitle = 'Security analyst in critical infrastructure (IT/OT). GRC by title, hands-on by nature. Building, breaking, and fixing in my homelab. Heading toward security engineering.'
+    imageUrl = "/img/profile.jpg"   # add an avatar here later; leave commented for none
+   # imageWidth = 120
+   # imageHeight = 120
 
     [[params.profileMode.buttons]]
       name = "Blog"
@@ -30,3 +27,19 @@ theme = 'PaperMod'
 [[params.socialIcons]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/mark-richardson-48328a237/"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 30
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 20
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 10

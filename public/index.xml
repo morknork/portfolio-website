@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Mark - Security</title>
+    <title>MorknOrk</title>
     <link>http://10.0.0.19:1313/</link>
-    <description>Recent content on Mark - Security</description>
+    <description>Recent content on MorknOrk</description>
     <generator>Hugo</generator>
     <language>en-au</language>
-    <lastBuildDate>Wed, 24 Jun 2026 03:19:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 06:02:43 +0000</lastBuildDate>
     <atom:link href="http://10.0.0.19:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentik SSO</title>
+      <link>http://10.0.0.19:1313/projects/authentik-sso/</link>
+      <pubDate>Wed, 24 Jun 2026 06:02:43 +0000</pubDate>
+      <guid>http://10.0.0.19:1313/projects/authentik-sso/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://10.0.0.19:1313/about/</link>
+      <pubDate>Wed, 24 Jun 2026 05:05:22 +0000</pubDate>
+      <guid>http://10.0.0.19:1313/about/</guid>
+      <description>&lt;p&gt;A no-life degenerate gamer turned productive member of society. My time playing competitive games was where I found lifelong friends, a fierce drive to be best, and an enduring habit to forget about bedtime until 3am.&lt;/p&gt;
+&lt;p&gt;Unfortunately, we must all grow up eventually. After some time in customer service, I realised that I&amp;rsquo;m only happy when believing the work I do is both meaningful and actively attempts to make a difference in people&amp;rsquo;s lives.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hello World</title>
       <link>http://10.0.0.19:1313/blog/hello-world/</link>
