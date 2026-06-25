@@ -145,7 +145,11 @@ Changing the password meant updating it across every service manually. If my net
 <p>When a request comes in, Caddy checks with Authentik whether the request is authenticated. If it isn&rsquo;t, the request is redirected to the Authentik login page. If the user doesn&rsquo;t exist, enters a wrong password, or doesn&rsquo;t have permission to access the service, they&rsquo;re stopped here. Authentik handles both the authentication (proving identity) and the authorisation (whether this identity has permission to access the service). This is forward auth - Caddy defers the authentication to Authentik and then enforces the result.
 Once the user is authenticated with Authentik, Caddy routes the request to the requested service. When a user logs in, they have an authenticated session which means they&rsquo;re able to access the services to which they have permission - a single sign-on.</p>
 <p>This design also means that any service that either has a weak login or none at all is still fully protected since authentication happens at the proxy.
-<img alt="Forward auth request flow: a request passes through Caddy to the authentik check, unauthenticated requests go to login, authenticated requests reach the services" loading="lazy" src="/img/forward-auth.svg"></p>
+<img alt="forward auth request flow: a request passes through Caddy to the authentik check, unauthenticated requests go to login, authenticated requests reach the services" loading="lazy" src="/img/forward-auth.svg"></p>
+<p>Building this and writing it up made me realise the whole design rests the assumption that Caddy is the only way to reach a service.</p>
+<p>It isn&rsquo;t.</p>
+<p>Anyone on my network can skip the hostname entirely by hitting a service directly at its ip:port, bypassing Caddy entirely. Forward auth only matters if the proxy is genuinely the only path in, and right now nothing at the network level enforces that.</p>
+<p>Which is exactly where my next project starts: host-based firewalls and locking each service down so Caddy really is the front door.</p>
 
 
   </div>

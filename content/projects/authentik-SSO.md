@@ -14,4 +14,12 @@ When a request comes in, Caddy checks with Authentik whether the request is auth
 Once the user is authenticated with Authentik, Caddy routes the request to the requested service. When a user logs in, they have an authenticated session which means they're able to access the services to which they have permission - a single sign-on.
 
 This design also means that any service that either has a weak login or none at all is still fully protected since authentication happens at the proxy. 
-![Forward auth request flow: a request passes through Caddy to the authentik check, unauthenticated requests go to login, authenticated requests reach the services](/img/forward-auth.svg)
+![forward auth request flow: a request passes through Caddy to the authentik check, unauthenticated requests go to login, authenticated requests reach the services](/img/forward-auth.svg)
+
+Building this and writing it up made me realise the whole design rests the assumption that Caddy is the only way to reach a service. 
+
+It isn't. 
+
+Anyone on my network can skip the hostname entirely by hitting a service directly at its ip:port, bypassing Caddy entirely. Forward auth only matters if the proxy is genuinely the only path in, and right now nothing at the network level enforces that. 
+
+Which is exactly where my next project starts: host-based firewalls and locking each service down so Caddy really is the front door.
